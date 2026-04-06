@@ -91,6 +91,11 @@ def mmc(v1, v2):
     valor2 = v2
     divisor = 2
     result = 1
+    if v1 == 0 or v2 == 0:
+        print(f"O MMC de {valor1} e {valor2} é: 0")
+        input("\nTecle [Enter] para retornar ao seletor.")
+        principal()
+
     while v1 != 1 or v2 != 1:
         if v1 % divisor != 0 and v2 % divisor != 0:
             divisor += 1
@@ -102,17 +107,22 @@ def mmc(v1, v2):
             v2 /= divisor
         
 
-    print(f"O MMC de {valor1} e {valor2} é: {result}")
-    input("Tecle [Enter] para retornar ao seletor.")
+    print(f"\nO MMC de {valor1} e {valor2} é: {result}")
+    input("\nTecle [Enter] para retornar ao seletor.")
    
 def RaizCubica():
     pass
 
-def mdc(v1, v2):
+def mdc(v1, v2) -> int:
     valor1 = v1
     valor2 = v2
     result = 0
     
+    if v1 == 0 or v2 == 0:
+        print(f"O MDC de {valor1} e {valor2} é: 0")
+        input("Tecle [Enter] para retornar ao seletor.")
+        principal()
+
     while v1 != v2:
         if v1 > v2:
             v1 -= v2
@@ -121,8 +131,8 @@ def mdc(v1, v2):
     if v1 == v2:
         result = v1
 
-    print(f"O MDC de {valor1} e {valor2} é: {result}")
-    input("Tecle [Enter] para retornar ao seletor.")
+    print(f"\nO MDC de {valor1} e {valor2} é: {result}")
+    input("\nTecle [Enter] para retornar ao seletor.")
 
 def Fibonacci():
     pass
@@ -144,6 +154,7 @@ def principal():
 
 
             case 3: RaizCubica()        # Chama a função "RaizCubica" (Raiz Cúbica).
+
             case 4:
                 os.system('cls') 
                 print("Insíra dois valores inteiros para calcular  o mdc: ")  # Pede dois valores inteiros ao usuário.
