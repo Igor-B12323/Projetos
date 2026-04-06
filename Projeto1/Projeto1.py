@@ -91,18 +91,23 @@ def estatistica():
 
             
 def mmc(v1, v2):
+    valor1 = v1
+    valor2 = v2
     divisor = 2
     result = 1
     while v1 != 1 and v2 != 1:
+        if v1 % divisor != 0 and v2 % divisor != 0:
+            divisor += 1
+        if v1 % divisor == 0 or v2 % divisor == 0:
+            result *= divisor
         if v1 % divisor == 0:
             v1 /= divisor
         if v2 % divisor == 0:
             v2 /= divisor
-        if v1 % divisor != 0 and v2 % divisor != 0:
-            result *= divisor
-            divisor += 1
-    return result
-
+        
+    print(f"O MMC de {valor1} e {valor2} é: {result}")
+    input("Tecle [Enter] para retornar ao seletor.")
+   
 def RaizCu():
     pass
 
@@ -122,9 +127,10 @@ def principal():
             
             case 2: 
                 os.system('cls') 
-                print("Insíra os valores para calcular  o mmc: ")
-                float
-
+                print("Insíra dois valores inteiros para calcular  o mmc: ")  # Pede dois valores inteiros ao usuário.
+                v1 = int(input("\n1° valor: "))             # Armazena os valores nas variáveis "v1" e "v2".
+                v2 = int(input("\n2° valor: "))
+                mmc(v1, v2)         # Envia os valores armazenados nas variáveis "v1" e "v2" para a função "mmc".
 
 
             case 3: RaizCu()        # Chama a função RaizCu (Raiz Cúbica).
