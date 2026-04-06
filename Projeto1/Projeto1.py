@@ -45,35 +45,31 @@ def estatistica():
             Valor = float(Campos[0])        # Atribui o valor da esquerda a variável "Valor".
             Peso = float(Campos[1])
 
-            try:
-                      
+            try:     
                 umaSom.R_media_quadratica(Valor)     # Manda o valor para o método media a classe Somatoria.
+
             except:
                 raise Exception("Erro!")
 
             try:
-
                 umaSom.media_aritmetica(Valor)
                 
             except:
                 raise Exception("Erro!")
             
             try:
-
                 umaSom.media_ponderada(Valor, Peso)
                 
             except:
                 raise Exception("Erro!")
             
             try:
-
                 umProd.produto(Valor)
                 
             except:
                 raise Exception("Erro!")
             
             try:
-
                 umaSom.media_harmonica(Valor)
                 
             except:
@@ -109,11 +105,24 @@ def mmc(v1, v2):
     print(f"O MMC de {valor1} e {valor2} é: {result}")
     input("Tecle [Enter] para retornar ao seletor.")
    
-def RaizCu():
+def RaizCubica():
     pass
 
-def MDC():
-    pass
+def mdc(v1, v2):
+    valor1 = v1
+    valor2 = v2
+    result = 0
+    
+    while v1 != v2:
+        if v1 > v2:
+            v1 -= v2
+        if v2 > v1:
+            v2 -= v1
+    if v1 == v2:
+        result = v1
+
+    print(f"O MDC de {valor1} e {valor2} é: {result}")
+    input("Tecle [Enter] para retornar ao seletor.")
 
 def Fibonacci():
     pass
@@ -124,7 +133,7 @@ def principal():
     while opcao != 0:
         opcao = seletor()
         match opcao:
-            case 1: estatistica()   # Chama a função estatistica.
+            case 1: estatistica()   # Chama a função "estatistica".
             
             case 2: 
                 os.system('cls') 
@@ -134,9 +143,16 @@ def principal():
                 mmc(v1, v2)         # Envia os valores armazenados nas variáveis "v1" e "v2" para a função "mmc".
 
 
-            case 3: RaizCu()        # Chama a função RaizCu (Raiz Cúbica).
-            case 4: MDC()           # Chama a função MDC.
-            case 5: Fibonacci()     # Chama a função Fibonacci.
+            case 3: RaizCubica()        # Chama a função "RaizCubica" (Raiz Cúbica).
+            case 4:
+                os.system('cls') 
+                print("Insíra dois valores inteiros para calcular  o mdc: ")  # Pede dois valores inteiros ao usuário.
+                v1 = int(input("\n1° valor: "))             # Armazena os valores nas variáveis "v1" e "v2".
+                v2 = int(input("\n2° valor: "))
+                mdc(v1, v2)         # Envia os valores armazenados nas variáveis "v1" e "v2" para a função "mdc".
+
+        
+            case 5: Fibonacci()     # Chama a função "Fibonacci".
 
 
 
