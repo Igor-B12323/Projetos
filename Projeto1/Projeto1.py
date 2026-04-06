@@ -95,7 +95,7 @@ def mmc(v1, v2):
     valor2 = v2
     divisor = 2
     result = 1
-    while v1 != 1 and v2 != 1:
+    while v1 != 1 or v2 != 1:
         if v1 % divisor != 0 and v2 % divisor != 0:
             divisor += 1
         if v1 % divisor == 0 or v2 % divisor == 0:
@@ -105,6 +105,7 @@ def mmc(v1, v2):
         if v2 % divisor == 0:
             v2 /= divisor
         
+
     print(f"O MMC de {valor1} e {valor2} é: {result}")
     input("Tecle [Enter] para retornar ao seletor.")
    
