@@ -83,7 +83,7 @@ def estatistica():
         print(f"\nA Raiz Média Quadrática dos valores é {umaSom.M_quadratica:.2f} .")
         print(f"\nA média ponderada dos valores é {umaSom.M_ponderada:.2f} .")
         print(f"\nA média geométrica dos valores é {umProd.M_geometrica:.2f} .")
-        print(f"\nA média harmônica dos valores  {umaSom.M_harmonica:.2f} .")
+        print(f"\nA média harmônica dos valores é {umaSom.M_harmonica:.2f} .")
         arquivo.close()
         umaSom.reset()
         input("\n Tecle [Enter] para continuar.")
