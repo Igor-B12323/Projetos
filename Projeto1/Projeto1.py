@@ -153,8 +153,7 @@ def principal():
                 mmc(v1, v2)         # Envia os valores armazenados nas variáveis "v1" e "v2" para a função "mmc".
 
 
-            case 3: RaizCubica()        # Chama a função "RaizCubica" (Raiz Cúbica).
-
+            case 3: RaizCubica()        # Chama a função "RaizCubica".
             case 4:
                 os.system('cls') 
                 print("Insíra dois valores inteiros para calcular  o mdc: ")  # Pede dois valores inteiros ao usuário.
