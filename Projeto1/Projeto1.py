@@ -111,7 +111,28 @@ def mmc(v1, v2):
     input("\nTecle [Enter] para retornar ao seletor.")
    
 def RaizCubica():
-    pass
+    def calcular_raiz_cubica():
+    x = float(input("Digite o valor para calcular a raiz cúbica: "))
+    erro_maximo = float(input("Digite o erro máximo: "))
+
+    palpite = 1.0
+    # Calculando o novo valor
+    novo_valor = (x / (palpite ** 2) + 2 * palpite) / 3
+
+    print(f"\n{'Palpite':<10} | {'Novo Valor'}")
+    print("-" * 25)
+
+    # O loop continua enquanto a diferença for maior ou igual ao erro
+    while abs(palpite - novo_valor) >= erro_maximo:
+        print(f"{palpite:<10.4f} | {novo_valor:.4f}")
+        
+        palpite = novo_valor
+        novo_valor = (x / (palpite ** 2) + 2 * palpite) / 3
+
+    # Exibe a última linha (onde a condição de erro é atingida)
+    print(f"{palpite:<10.4f} | {novo_valor:.4f}")
+    print("-" * 25)
+    print(f"Resultado: {novo_valor:.4f}")
 
 def mdc(v1, v2) -> int:
     valor1 = v1
