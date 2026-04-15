@@ -154,8 +154,23 @@ def mdc(v1, v2) -> int:
     print(f"\nO MDC de {valor1} e {valor2} é: {result}")
     input("\nTecle [Enter] para retornar ao seletor.")
 
-def Fibonacci():
-    pass
+def fibonacci(n: int) -> list[int]:
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [1]
+        
+    # Inicia a sequência com os dois primeiros termos iguais a 1
+    seq = [1, 1]
+        
+    # Gera os termos a partir do terceiro (índice 2)
+    while len(seq) < n:
+        proximo_valor = seq[-1] + seq[-2]
+        seq.append(proximo_valor)
+            
+    return seq[:n]
+    
+    
 
 
 def principal():
@@ -182,7 +197,14 @@ def principal():
                 mdc(v1, v2)         # Envia os valores armazenados nas variáveis "v1" e "v2" para a função "mdc".
 
         
-            case 5: Fibonacci()     # Chama a função "Fibonacci".
+            case 5:          # Chama a função "Fibonacci".
+                os.system('cls')
+                n_termos = int(input("Digite a quantidade de termos (n): "))
+                lista = fibonacci(n_termos)
+
+                print(f"Sequência de Fibonacci com {n_termos} valores:")
+                for valor in lista:
+                    print(valor, end=" ")                
 
 
 
